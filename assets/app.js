@@ -31,7 +31,7 @@
       <h2 id="list-title">This month</h2>
       <ul class="month-list" id="month-list"></ul>
     </section>
-    <p class="footer">Last updated 10 November 2026. Times are Hong Kong time.</p>
+    <p class="footer">Last updated 11 November 2026. Times are Hong Kong time.</p>
   `;
 
   document.getElementById("prev").addEventListener("click", () => {
@@ -105,6 +105,7 @@
 
   function shortTitle(title) {
     return title
+      .replace("Latte online reading (Any one reading)", "Latte reading")
       .replace("English Writing Uniform Test (S4WA UT)", "Writing UT")
       .replace("English Reading Uniform Test (S4RB UT)", "Reading UT")
       .replace("English Listening Uniform Test (S4LA UT)", "Listening UT")
