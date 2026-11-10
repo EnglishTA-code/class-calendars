@@ -1,0 +1,272 @@
+:root {
+  --bg: #f3efe6;
+  --paper: #fffdf8;
+  --ink: #1c2430;
+  --muted: #5c6673;
+  --line: #e4ddd0;
+  --brand: #1e3a5f;
+  --brand-soft: #e8eef6;
+  --accent: #a0671a;
+  --today: #1e3a5f;
+  --shadow: 0 10px 30px rgba(28, 36, 48, 0.08);
+  --radius: 18px;
+}
+
+[data-class="3E"] {
+  --brand: #0f4c5c;
+  --brand-soft: #e4f1f3;
+  --accent: #b45309;
+  --today: #0f4c5c;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", "PingFang HK", "Noto Sans CJK HK", "Noto Sans", sans-serif;
+  line-height: 1.45;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.wrap {
+  width: min(720px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 48px;
+}
+
+.header {
+  background: var(--brand);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 22px 24px 20px;
+  box-shadow: var(--shadow);
+}
+
+.kicker {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  font-weight: 600;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.header p {
+  margin: 8px 0 0;
+  opacity: 0.88;
+  font-size: 0.98rem;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 22px;
+  margin-top: 16px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  color: var(--brand);
+}
+
+.next-list,
+.month-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.next-item,
+.month-item {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  background: var(--brand-soft);
+  border-radius: 12px;
+}
+
+.when {
+  font-weight: 700;
+  color: var(--brand);
+  font-size: 0.92rem;
+}
+
+.title { font-weight: 650; }
+
+.meta {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.cal-head h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.nav button {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--brand);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.nav button:hover,
+.nav button:focus-visible {
+  background: var(--brand-soft);
+  outline: none;
+}
+
+.dow, .grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.dow {
+  margin-bottom: 6px;
+}
+
+.dow span {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.day {
+  min-height: 74px;
+  border: 1px solid transparent;
+  background: #faf7f1;
+  border-radius: 12px;
+  padding: 6px 5px 8px;
+  text-align: left;
+}
+
+.day.empty { background: transparent; }
+
+.day.today {
+  border-color: var(--today);
+  box-shadow: inset 0 0 0 1px var(--today);
+}
+
+.num {
+  display: inline-flex;
+  min-width: 1.4rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.day.today .num {
+  background: var(--today);
+  color: #fff;
+  border-radius: 999px;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.pills {
+  display: grid;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.pill {
+  display: block;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  background: var(--brand);
+  color: #fff;
+  border-radius: 6px;
+  padding: 2px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.footer {
+  margin: 22px 8px 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.home {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pick {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.pick a {
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.pick a:hover, .pick a:focus-visible {
+  border-color: var(--brand);
+  outline: none;
+}
+
+.pick strong {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--brand);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 620px) {
+  .wrap { width: min(100% - 20px, 720px); padding-top: 16px; }
+  .day { min-height: 64px; }
+  .next-item, .month-item { grid-template-columns: 78px 1fr; }
+  .pill { font-size: 0.62rem; }
+}
